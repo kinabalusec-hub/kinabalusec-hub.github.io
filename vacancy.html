@@ -701,6 +701,111 @@
 -->
 
 
+    
+<!-- Application Section -->
+    <section id="apply" class="section" style="background: rgba(255, 107, 107, 0.05);">
+        <h2 class="section-title">Apply for Position</h2>
+        
+        <div class="form-container">
+            <form id="applicationForm">
+                <div class="form-group">
+                    <label for="applicantName">Full Name</label>
+                    <input type="text" id="applicantName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantEmail">Email Address</label>
+                    <input type="email" id="applicantEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantPhone">Phone Number</label>
+                    <input type="tel" id="applicantPhone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantPosition">Position Applying For</label>
+                    <select id="applicantPosition" name="position" required>
+                        <option value="">Select a position</option>
+                        <option value="penetration-tester">Penetration Tester</option>
+                        <option value="security-trainer">Security Trainer</option>
+                        <option value="ransomware-researcher">Ransomware Researcher</option>
+                        <option value="junior-analyst">Junior Security Analyst</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantMessage">Why are you interested in this position?</label>
+                    <textarea id="applicantMessage" name="message"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantResume">Upload Resume (PDF, DOC, DOCX)</label>
+                    <input type="file" id="applicantResume" name="resume" accept=".pdf,.doc,.docx">
+                </div>
+                
+                <button type="submit" class="btn">Submit Application</button>
+            </form>
+            
+            <div id="applicationSuccess" class="success-message">
+                Thank you for your application! We'll review your submission and contact you soon.
+            </div>
+            
+            <p class="form-note">
+                Alternatively, you can email your resume directly to 
+                <a href="mailto:kinabalusec@gmail.com" style="color: var(--secondary);">kinabalusec@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Notification Section 
+    <section id="notify" class="section">
+        <h2 class="section-title">Get Notified When Available</h2>
+        
+        <div class="form-container">
+            <form id="notificationForm">
+                <div class="form-group">
+                    <label for="notifyName">Your Name</label>
+                    <input type="text" id="notifyName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notifyEmail">Email Address</label>
+                    <input type="email" id="notifyEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notifyService">Service You're Interested In</label>
+                    <select id="notifyService" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="cloud-testing">Cloud Security Testing</option>
+                        <option value="api-testing">API Security Testing</option>
+                        <option value="mobile-testing">Mobile Application Testing</option>
+                        <option value="scada">SCADA/ICS Security Assessment</option>
+                        <option value="other">Other Service</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notifyMessage">Additional Notes (optional)</label>
+                    <textarea id="notifyMessage" name="message" placeholder="Tell us about your specific requirements or timeline..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Notify Me</button>
+            </form>
+            
+            <div id="notificationSuccess" class="success-message">
+                Thanks for your interest! We'll notify you as soon as this service becomes available.
+            </div>
+            
+            <p class="form-note">
+                For immediate inquiries, contact us at 
+                <a href="mailto:kinabalusec@gmail.com" style="color: var(--secondary);">kinabalusec@gmail.com</a>
+            </p>
+        </div>
+    </section>-->
+
 
 <!-- Footer -->
     <footer>
