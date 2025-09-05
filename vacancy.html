@@ -805,7 +805,20 @@
             </p>
         </div>
     </section>-->
-
+<script>
+        // Simple form handling
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('applicationSuccess').style.display = 'block';
+            this.reset();
+        });
+        
+        document.getElementById('notificationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('notificationSuccess').style.display = 'block';
+            this.reset();
+        });
+    </script>
 
 <!-- Footer -->
     <footer>
