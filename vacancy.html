@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinabaluSec™ | Vacancy</title>
+    <style>
+        :root {
+            --primary: #2a2a72;
+            --secondary: #ff6b6b;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: white;
+            line-height: 1.6;
+        }
+        .crown-banner {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .crown-banner .banner {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            background: transparent; /* banner background */
+            color: #f1c40f; /* gold colour */
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.4rem;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    .feature-card {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        padding: 2rem;
+        transition: all 0.3s;
+    }
+    .feature-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255,255,255,0.1);
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+    }
+        .freelance {
+            position: relative;
+            overflow: hidden;
+        }
+        .freelance::before {
+            content: "Freelance";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 2rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .freelance .btn {
+            /*opacity: 0.6;
+            pointer-events: none;
+            cursor: not-allowed;*/
+        }
+        .navbar {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/careers-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0.5rem auto 0;
+        }
+        .vacancy-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        .vacancy-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s;
+            border-left: 4px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            position: relative; /* This is CRITICAL for absolute positioning */
+            overflow: hidden; /* This keeps banners within card bounds */
+        }
+        .vacancy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255,107,107,0.2);
+        }
+        .vacancies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .vacancy-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        .vacancy-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        /* HIRING Banner - LEFT side, permanent, rounded corners */
+.vacancy-card.hiring::before {
+    content: "HIRING";
+    position: absolute;
+    top: 15px;
+    left: -30px;
+    background: #4CAF50;
+    color: white;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transform: rotate(-45deg);
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 0 0 8px 8px;
+    /* GLOW EFFECT */
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+    animation: hiring-pulse 2s infinite;
+}
+
+/* CLOSED Banner - LEFT side, permanent, rounded corners */
+.vacancy-card.closed::before {
+    content: "CLOSED";
+    position: absolute;
+    top: 15px;
+    left: -30px;
+    background: #f44336;
+    color: white;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transform: rotate(-45deg);
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 0 0 8px 8px;
+}
+
+/* Glowing animation for HIRING */
+@keyframes hiring-pulse {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+    }
+}
+
+/* For positions that are closed, disable the button */
+.vacancy-card.closed .btn {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+        .tag {
+            background: rgba(255,107,107,0.2);
+            color: var(--secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .vacancy-features {
+            margin: 1rem 0;
+            padding-left: 1.2rem;
+            flex-grow: 1;
+        }
+        .vacancy-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        .vacancy-features li::before {
+            content: "→";
+            color: var(--secondary);
+            position: absolute;
+            left: -1.2rem;
+        }
+        .btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .benefit-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .application-process {
+            background: rgba(255,107,107,0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            position: relative;
+        }
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--secondary);
+            z-index: 1;
+        }
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 1rem;
+        }
+        footer {
+            background-color: var(--primary);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .process-steps::before {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+      <span>Kinabalu Security™</span>
+      </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#vacancies">Vacancies</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Join Our Team</h1>
+        <p>Help us defend businesses by thinking like an attacker</p>
+    </section>
+
+        <!-- Vacancies Section
+    <section id="vacancies" class="section" style="background: rgba(255,107,107,0.1);">
+        <h2 class="section-title">Join Our Team</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">👨‍💻</div>
+                <h3>Penetration Testers</h3>
+                <p>We're hiring ethical hackers with Web App or Network pentesting experience. CREST/OSCP preferred.</p>
+                <a href="#" style="color: var(--secondary);">Apply Now →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👩‍🏫</div>
+                <h3>Security Trainers</h3>
+                <p>Freelance positions available for those who can teach secure coding or threat awareness.</p>
+                <a href="#" style="color: var(--secondary);">Apply Now →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🔬</div>
+                <h3>Ransomware Researchers</h3>
+                <p>Work on our H.aRa hardening framework. Malware analysis experience required.</p>
+                <a href="#" style="color: var(--secondary);">Apply Now →</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Current Openings -->
+    <section class="section">
+        <h2 class="section-title">Current Openings</h2>
+
+        <div class="vacancies-grid">
+            <!-- Ransomware Researcher -->
+            <div class="vacancy-card freelance">
+                <div class="vacancy-icon">🔬</div>
+                <h3>Ransomware Researcher</h3>
+                <div class="vacancy-tags">
+                    <span class="tag">Kuala Lumpur</span>
+                </div>
+                <p>Join our team developing new ransomware protection techniques and reverse-engineering malware.</p>
+                <ul class="vacancy-features">
+                    <li>Understanding of ransomware techniques</li>
+                    <li>Knowledge of mitigation strategies</li>
+                    <li>Malware analysis experience</li>
+                    <li>Reverse engineering skills</li>
+                </ul>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>
+
+            <div class="vacancy-card freelance">
+            <div class="vacancy-icon">⚔️</div>
+            <h3>Defensive Security Engineer</h3>
+            <div class="vacancy-tags">
+            <span class="tag">Hybrid</span>
+            <span class="tag">Blue Team</span>
+        </div>
+        <p>We're seeking a Defensive Security Engineer to design and implement advanced protective measures, threat detection systems, and incident response capabilities to fortify our security posture.</p>
+        <ul class="vacancy-features">
+            <li>LPIC-3 a <b>must</b> or equivalent senior Linux certification</li>
+            <li>3+ years in blue team operations, security monitoring, or incident response</li>
+            <li>Experience with SIEM platforms, EDR solutions, and security tooling</li>
+            <li>Knowledge of threat intelligence, detection engineering, and security architecture</li>
+            <li>Proficiency in scripting for security automation (Python, PowerShell, etc.)</li>
+            <li>Knowledge of data encryption at rest & in transit</li>
+        </ul>
+        <a href="#apply" class="btn">Apply Now</a>
+    </div>
+
+
+
+            <div class="vacancy-card freelance">
+    <div class="vacancy-icon">⚔️</div>
+    <h3>Offensive Security Engineer</h3>
+    <div class="vacancy-tags">
+        <span class="tag">Hybrid</span>
+        <span class="tag">Red Team</span>
+    </div>
+    <p>We’re seeking an Offensive Security Engineer to design and build
+    advanced adversary simulation tools, bait techniques, and controlled
+    malware-like payloads to strengthen our defenses.</p>
+    <ul class="vacancy-features">
+        <li>3+ years in red teaming, exploit development, or malware research</li>
+        <li>Experience developing custom payloads & obfuscation techniques</li>
+        <li>Knowledge of honeypots, honeytokens, and deception engineering</li>
+        <li>Reverse engineering skills (IDA Pro, Ghidra, Radare2)</li>
+        <li>OSCP, OSEP, or equivalent offensive security certifications preferred</li>
+    </ul>
+    <a href="#apply" class="btn">Apply Now</a>
+</div>
+
+
+            <!-- Penetration Tester -->
+            <div class="vacancy-card freelance">
+                <div class="vacancy-icon">👨‍💻</div>
+                <h3>Penetration Tester</h3>
+                <div class="vacancy-tags">
+                    <!--<span class="tag">Full-time</span>-->
+                    <span class="tag">Hybrid</span>
+                    <!--<span class="tag">Remote Possible</span>-->
+                </div>
+                <p>We're looking for ethical hackers with experience in web application and network penetration testing.</p>
+                <ul class="vacancy-features">
+                    <li>2+ years experience in penetration testing</li>
+                    <li>OSCP, CEH, CJPT, CPTS or similar certification preferred</li>
+                    <li>Strong knowledge of OWASP Top 10</li>
+                    <li>Malware designing and creation</li>
+                    <li>Experience with testing tools like Burp Suite, Nmap, Metasploit</li>
+                </ul>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>
+
+            <!-- Security Trainer
+            <div class="vacancy-card freelance">
+                <div class="vacancy-icon">👩‍🏫</div>
+                <h3>Security Trainer</h3>
+                <div class="vacancy-tags">
+                    <!--<span class="tag">Freelance</span>
+                    <span class="tag">Flexible</span>
+                </div>
+                <p>Conduct security training workshops for developers and IT staff.</p>
+                <ul class="vacancy-features">
+                    <li>Experience in cybersecurity education and secure coding</li>
+                    <li>Strong presentation and communication skills</li>
+                    <li>Passionate in sharing knowledges</li>
+                    <li>Ability to simplify complex security concepts</li>
+                </ul>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>-->
+
+            <!-- Junior Security Analyst -->
+            <div class="vacancy-card">
+                <div class="vacancy-icon">🔍</div>
+                <h3>Junior Security Analyst</h3>
+                <div class="vacancy-tags">
+                    <span class="tag">Entry-level</span>
+                    <span class="tag">Kuala Lumpur</span>
+                    <span class="tag">Training Provided</span>
+                </div>
+                <p>Begin your cybersecurity career with our mentorship program. No experience required.</p>
+                <ul class="vacancy-features">
+                    <li>Strong interest in cybersecurity</li>
+                    <li>Basic understanding of networking</li>
+                    <li>Willingness to learn and obtain certifications</li>
+                    <li>Problem-solving mindset</li>
+                </ul>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>
+
+            <!-- Office Admin (Closed position) - NEW MATCHING STYLE
+            <div class="vacancy-card closed">
+                <div class="vacancy-icon">📊</div>
+                <h3>Office Administrator</h3>
+                <div class="vacancy-tags">
+                    <span class="tag">Full-time</span>
+                    <span class="tag">On-site</span>
+                </div>
+                <p>Manage office operations and support our security team.</p>
+                <ul class="vacancy-features">
+                    <li>Experience in office management</li>
+                    <li>Strong organizational skills</li>
+                    <li>Proficiency in office software</li>
+                    <li>Excellent communication abilities</li>
+                </ul>
+                <a href="#notify" class="btn">Notify When Open</a>
+            </div>-->
+
+            <!-- HR Executive (Hiring) - NEW MATCHING STYLE
+            <div class="vacancy-card hiring">
+                <div class="vacancy-icon">💼</div>
+                <h3>HR Executive</h3>
+                <div class="vacancy-tags">
+                    <span class="tag">Full-time</span>
+                    <span class="tag">Hybrid</span>
+                </div>
+                <p>Support recruitment and employee management for our growing team.</p>
+                <ul class="vacancy-features">
+                    <li>Experience in HR operations</li>
+                    <li>Knowledge of Malaysian labor laws</li>
+                    <li>Recruitment and onboarding experience</li>
+                    <li>Strong interpersonal skills</li>
+                </ul>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>-->
+
+            <!-- Head of Finance
+            <div class="vacancy-card">
+                <div class="vacancy-icon">💰</div>
+                <h3>Head of Finance</h3>
+                <div class="vacancy-tags">
+                    <span class="tag">Full-time</span>
+                    <span class="tag">Senior</span>
+                </div>
+                <p>Lead financial strategy and operations for Malaysia's fastest-growing cybersecurity firm.</p>
+                <ul class="vacancy-features">
+                    <li>Develop and implement financial strategies aligned with business goals</li>
+                    <li>Manage budgeting, forecasting, and financial reporting</li>
+                    <li>Oversee cash flow, investments, and financial risk management</li>
+                    <li>Lead financial planning for expansion and new service offerings</li>
+                    <li>Manage relationships with banks, investors, and financial institutions</li>
+                    <li>Ensure compliance with Malaysian financial regulations and tax requirements</li>
+                    <li>Lead and mentor finance team members</li>
+                </ul>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>-->
+
+            <!-- Ass Finance
+            <div class="vacancy-card">
+                <div class="vacancy-icon">📊</div>
+                <h3>Assistant Finance Manager</h3>
+                <div class="vacancy-tags">
+                    <span class="tag">Full-time</span>
+                    <span class="tag">Mid-level</span>
+                </div>
+                <p>Support financial operations and contribute to the growth of our cybersecurity services.</p>
+                <ul class="vacancy-features">
+                    <li>Assist in preparing financial statements and reports</li>
+                    <li>Manage accounts payable and receivable processes</li>
+                    <li>Process payroll and handle employee expense reimbursements</li>
+                    <li>Support budgeting and forecasting activities</li>
+                    <li>Maintain accurate financial records and documentation</li>
+                    <li>Assist with tax preparation and compliance filings</li>
+                    <li>Help with financial analysis and cost optimization</li>
+                    <li>Support audit processes and internal controls</li>
+                </ul>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>-->
+
+
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section" style="background: rgba(255,107,107,0.05);">
+        <h2 class="section-title">Why Join Us?</h2>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Competitive Salary</h3>
+                <p>One-of-a-kind industry-competitive compensation</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📚</div>
+                <h3>Continuous Learning</h3>
+                <p>Paid certifications and hands-on training opportunities</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🏠</div>
+                <h3>Flexible Work</h3>
+                <p>Remote work with flexible hours options</p>
+            </div>
+            <div class="benefit-card crown-banner">
+                <div class="banner">First in Malaysia</div>
+                <div class="benefit-icon">🏆</div>
+                <h3>Work-Life Balance</h3>
+                <p><li>You decide your Overtime hours</li></p>
+                <p><li>Get paid more, or take more time off</li></p>
+                <p><li>The choice is always yours — not just a slogan</li></p>
+            </div>
+            <!--<div class="benefit-card">
+                <div class="benefit-icon">⚕️</div>
+                <h3>Health Benefits</h3>
+                <p>Comprehensive medical and dental insurance</p>
+            </div>-->
+        </div>
+    </section>
+
+<!-- Application Process
+    <section class="section">
+        <h2 class="section-title">Application Process</h2>
+
+
+        <div class="application-process">
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Apply Online</h4>
+                    <p>Submit your application and resume</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Technical Assessment</h4>
+                    <p>Complete our practical security challenge</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Interviews</h4>
+                    <p>Meet the team (2 rounds)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Offer</h4>
+                    <p>Join our security team!</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="mailto:careers@friendlyattacker.my" class="btn">Apply Now</a>
+        </div>
+    </section>
+
+-->
+
+
+
+<!-- Footer -->
+    <footer>
+        <p>© 2025 Kinabalu Security™. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">Defending Your Fort</p>
+    </footer>
+</body>
+</html>

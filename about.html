@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinabaluSec™ | About Us</title>
+    <style>
+    :root {
+        --primary: #2a2a72;
+        --secondary: #ff6b6b;
+        --dark: #1a1a2e;
+        --light: #f8f9fa;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+    .about-text {
+        padding-right: 2rem;
+    }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--dark);
+        color: white;
+        line-height: 1.6;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    .feature-card {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        padding: 2rem;
+        transition: all 0.3s;
+    }
+    .feature-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255,255,255,0.1);
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+    }
+    footer {
+        background-color: var(--primary);
+        text-align: center;
+        padding: 3rem 2rem;
+        margin-top: 3rem;
+        }
+    .hero-about {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/team-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+    .hero-about h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    .member-back {
+        transform: rotateY(180deg);
+        background: rgba(42,42,114,0.8);
+        border: 1px solid var(--secondary);
+    }
+    .member-back p {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .member-card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.6s ease;
+        border-radius: 10px;
+    }
+    .member-front h3,
+    .member-front p {
+        position: relative;
+        z-index: 3;
+    }
+    .member-front, .member-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.05);
+    }
+    .navbar {
+        background-color: var(--primary);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    .nav-links a:hover {
+        color: var(--secondary);
+    }
+    .section {
+        padding: 5rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        margin: 0.5rem auto 0;
+    }
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    .team-member {
+        perspective: 1000px;
+        height: 300px;
+        position: relative;
+        background: transparent !important;
+    }
+    .team-member:hover .member-card {
+        transform: rotateY(180deg);
+    }
+    .team-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        border: 3px solid var(--secondary);
+        position: relative;
+        z-index: 3; /* Keep above curtain */
+    }
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background: var(--secondary);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+    }
+    .timeline-content {
+        padding: 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+    }
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+    .timeline-item.future {
+    position: relative;
+    border-left: 2px solid rgba(0, 255, 170, 0.3); /* glowing line */
+}
+
+.timeline-item.future .timeline-content {
+    background: rgba(10, 15, 25, 0.9); /* dark cyber background */
+    border: 2px solid rgba(0, 255, 170, 0.6);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    color: #0ff;
+    font-style: italic;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.4),
+                inset 0 0 20px rgba(0, 255, 170, 0.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.timeline-item.future .timeline-content:hover {
+    border-color: #0ff;
+    color: #fff;
+    text-shadow: 0 0 6px #0ff, 0 0 12px #00ffaa;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.8),
+                0 0 30px rgba(0, 255, 170, 0.6),
+                inset 0 0 25px rgba(0, 255, 170, 0.2);
+    transform: translateY(-4px);
+}
+
+.timeline-item.future h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #00ffaa;
+    margin-bottom: 8px;
+    text-shadow: 0 0 8px rgba(0,255,170,0.8);
+}
+
+.timeline-item.future p {
+    font-size: 1em;
+    color: #88ffee;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+
+        /* Vacancy STYLES */
+    /* ==================== */
+    /* CURTAIN REVEAL STYLES */
+    /* ==================== */
+    /*
+    .member-front::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--secondary);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    .member-back {
+        opacity: 0;
+        transition: opacity 0.3s ease 0.2s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(42,42,114,0.9);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        z-index: 2;
+    }
+
+    .team-member:hover .member-front::after {
+        opacity: 0.8;
+    }
+
+    .team-member:hover .member-back {
+        opacity: 1;
+    }
+    */
+    /* ==================== */
+    /* OLD FLIP STYLES (COMMENTED OUT) */
+    /* ==================== */
+
+
+    /* Ensure front content stays above curtain */
+
+
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+      <span>Kinabalu Security™</span>
+      </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#vacancies">Vacancies</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+
+    <!-- About Us -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Us</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>Kinabalu Security™ is a Bumiputra-owned cybersecurity provider built from the ground up on the principle of trust. Unlike traditional product-centric firms, we began as a freelance initiative focused on one thing: delivering hands-on results.</p>
+            <p>Our methodology is dedicated to enhancing organizational resilience through practical, reliable solutions that fortify existing infrastructure. We offer an unconventional alternative because we've learned that real-world effectiveness, not large-scale marketing, is the true cornerstone of cybersecurity.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">Our Unconventional Origins</h2>
+                <p>The root of our company goes back to the late 90s, when our founder was fascinated by computer viruses. Instead of avoiding them, he studied their behavior — running them live, observing how they spread, and even building a personal “immune system” that went beyond antivirus software.</p>
+                <p>As ransomware and modern threats emerged, that same mindset evolved into our company’s mission: To protect systems through research-driven, adaptive defenses.</p>
+                <p>We were founded on the belief that real security comes not from fear, but from understanding, testing, and innovating.</p>
+            </div>
+            <div>
+                <img src="images/ks1.png" alt="Logo" style="width:100%; border-radius:10px; filter: drop-shadow(5px 5px 8px var(--secondary)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section" style="background:rgba(0,0,0,0.3)">
+        <h2 class="section-title">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2021</h3>
+                    <p>Discovered disk partitions could hide data from users — including admins and you the owner</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2022</h3>
+                    <p>Developed H.aRA™ hardening framework protection</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2024</h3>
+                    <p>Launched B.aRa™ backup protection</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2025</h3>
+                    <p>Project Rafflesia™ : The Ultimate Security Diversion by Kinabalu Security™</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2025</h3>
+                    <p>Project Tamparuli Bridge™ : The Ultimate Turning Point by Kinabalu Security™</p>
+                </div>
+            </div>
+            <div class="timeline-item future">
+                <div class="timeline-content">
+                    <h3>2026</h3>
+                    <p><em>Coming Soon — Our Next Evolution in Security Innovation</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section">
+        <h2 class="section-title">The Overseer</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-card">
+                    <div class="member-front">
+                        <img src="images/ceo.jpg" alt="CEO" class="team-photo">
+                        <h3>A. Spencer</h3>
+                        <p>CTO / "The Trap"</p>
+                    </div>
+                    <div class="member-back">
+                        <h3>Specialty</h3>
+                        <p>Malware enthusiast with 29 years in defensive system.
+                        <i>Hunts malware in production.
+                        </i> Creator of H.aRa™ framework. Introduced B.aRa™ backup protection. Spear-headed Project Rafflesia™ and Poject Tamparuli Bridge™. Certified Ethical Hacker and CPTS.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="team-member">
+                <div class="member-card">
+                    <div class="member-front">
+                        <img src="cto.jpg" alt="CTO" class="team-photo">
+                        <h3>Vacant</h3>
+                        <p>CTO</p>
+                    </div>
+                    <div class="member-back">
+                        <h3>Specialty</h3>
+                        <p>Your chance to showcase your specialty here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-card">
+                    <div class="member-front">
+                        <img src="lead-researcher.jpg" alt="Lead Researcher" class="team-photo">
+                        <h3>Vacant</h3>
+                        <p>Lead Researcher</p>
+                    </div>
+                    <div class="member-back">
+                        <h3>Specialty</h3>
+                        <p>Showcase your skills here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+    </section>
+
+    <!-- Team
+    <section class="section">
+        <h2 class="section-title">The Friendly Attacker Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-card">
+                    <div class="member-front">
+                        <img src="cto.jpg" alt="Team Lead" class="team-photo">
+                        <h3>Vacant</h3>
+                        <p>Red Team Lead</p>
+                    </div>
+                    <div class="member-back">
+                        <h3>Specialty</h3>
+                        <p>Showcase your skill here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </section>
+
+
+        <!-- Team
+    <section class="section">
+        <h2 class="section-title">The Vigilant Sentinel Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-card">
+                    <div class="member-front">
+                        <img src="ceo.jpg" alt="Team Lead" class="team-photo">
+                        <h3>Vacant</h3>
+                        <p>Blue Team Lead</p>
+                    </div>
+                    <div class="member-back">
+                        <h3>Specialty</h3>
+                        <p>Showcase your skills here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </section>
+
+
+
+<!-- Footer -->
+    <footer>
+        <p>© 2025 Kinabalu Security™. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">Defending Your Fort</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinabaluSec™ | Contact Us</title>
+    <style>
+        :root {
+            --primary: #2a2a72;
+            --secondary: #ff6b6b;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: white;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: var(--primary);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+        .navbar {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/contact-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+      <span>Kinabalu Security™</span>
+      </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#vacancies">Vacancies</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>How May I Access Your Systems?</h1>
+        <p>(Ethically, of course)</p>
+    </section>
+
+    <!-- Contact Methods -->
+    <div class="contact-container">
+        <!-- Email -->
+        <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Email Us</h3>
+            <p>For detailed inquiries and quotes:</p>
+            <a href="mailto:kinabalusec@gmail.com" style="color: var(--secondary); word-break: break-all;">
+                KINABALUSEC@GMAIL.COM
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Response time: <strong>24 hours</strong>
+            </p>
+        </div>
+
+        <!-- WhatsApp
+        <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>Chat Directly</h3>
+            <p>For quick questions:</p>
+            <a href="https://wa.me/60123456789?text=Hi%20Friendly%20Attacker!%20I%20need%20help%20with..."
+               class="whatsapp-btn"
+               target="_blank">
+                WhatsApp Us
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Mon-Fri: <strong>9AM-6PM</strong>
+            </p>-->
+        </div>
+
+        <!-- Emergency
+        <div class="contact-card">
+            <div class="contact-icon">🚨</div>
+            <h3>Ransomware Emergency?</h3>
+            <p>If you're under active attack:</p>
+            <a href="tel:+60123456789" style="color: var(--secondary);">
+                +60 12-345 6789
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                24/7 response - <strong>Don't pay the ransom!</strong>
+            </p>
+        </div>-->
+    </div>
+
+    <!-- Contact Form -->
+    <section class="contact-form">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Or Send Us a Message</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Needed</label>
+                <input type="text" id="service" name="service" list="services">
+                <datalist id="services">
+                    <option value="Web App Pentesting">
+                    <option value="Ransomware Protection">
+                    <option value="Security Training">
+                    <option value="Red Team Exercise">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Attack</button>
+        </form>
+    </section>
+
+<!-- Footer -->
+    <footer>
+        <p>© 2025 KinabaluSec™. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">Defending Your Fort</p>
+    </footer>
+</body>
+</html>
+

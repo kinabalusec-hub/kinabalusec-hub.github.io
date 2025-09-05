@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinabaluSec™ | Defending your Fort</title>
+    <style>
+        :root {
+            --primary: #2a2a72;
+            --secondary: #ff6b6b;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: white;
+            line-height: 1.6;
+        }
+        .emblem {
+            width: 80px;
+            height: 80px;
+        }
+        .navbar {
+            /*backdrop-filter: blur(30px);
+            box-shadow: 0px 0px 30px rgba(227, 228, 238, 0.38);
+            border: 2px solid rgba(255, 255, 255, 0.18);*/
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/main-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+        .cta-button {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+        }
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0.5rem auto 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        footer {
+            background-color: var(--primary);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+      <span>Kinabalu Security™</span>
+      </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#vacancies">Vacancies</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>We Attack. We Defend. You Win.</h1>
+        <p>Providing security solutions and ransomware protection.</p>
+        <a href="services.html" class="cta-button">Explore Our Services</a>
+    </section>
+
+       <!-- Your Shield Against Ransomware -->
+<section class="section">
+    <h2 class="section-title">Comprehensive Ransomware Protection</h2>
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Proactive Ransomware Hardening</h3>
+            <p>Our H.aRa framework preemptively fortifies your systems against ransomware attacks before they can strike, based on real attack patterns.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚫</div>
+            <h3>Prevent Breaches</h3>
+            <p>Harden systems against initial compromise with security configurations that block ransomware entry points.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🛑</div>
+            <h3>Contain Attacks</h3>
+            <p>Limit damage with controls that prevent ransomware from spreading across your network.</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Why Choose The Red Team -->
+    <section class="section">
+        <h2 class="section-title">Why Choose The Friendly Attacker?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <h3>Real-World Testing</h3>
+                <p>We simulate actual attacker techniques, not just checkbox scanning. If we can breach you, real hackers probably can.</p>
+            </div>
+            <div class="feature-card">
+            <div class="feature-icon">🕵️</div>
+            <h3>Attacker's Mindset</h3>
+            <p>We approach your systems like potential adversaries would, identifying realistic attack paths.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Focused on What Matters</h3>
+            <p>We prioritize findings that could actually be exploited in real-world scenarios.</p>
+        </div>
+    </div>
+    </section>
+
+
+
+<!-- ==================== -->
+<!-- Testimonial Carousel -->
+<!-- ==================== -->
+<section class="section" style="background: rgba(255,107,107,0.05); padding: 4rem 0;">
+    <h2 class="section-title">Why Cybersecurity Matters</h2>
+
+    <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; overflow: hidden; position: relative;">
+        <div class="carousel-track" style="display: flex; gap: 2rem; padding: 2rem; transition: transform 0.5s ease;">
+
+            <!-- Card 1: Statistic -->
+            <div class="carousel-card" style="min-width: 300px; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 2rem; border-left: 4px solid var(--secondary); display: flex; flex-direction: column; height: 300px; box-sizing: border-box;">
+                <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;">85%</div>
+                <p style="font-weight: bold; margin: 0; flex-grow: 1;">of Malaysian businesses experienced at least one cyber attack in 2022</p>
+                <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8; margin-bottom: 0;">Source: Cybersecurity Malaysia</p>
+            </div>
+
+            <!-- Card 2: Testimonial
+            <div class="carousel-card" style="min-width: 300px; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 2rem; border-left: 4px solid #25D366; display: flex; flex-direction: column; height: 300px; box-sizing: border-box;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: #ccc; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.8rem;">Photo</div>
+                    <div>
+                        <h4 style="margin: 0; font-size: 1rem;">Ahmad Faris</h4>
+                        <p style="margin: 0; font-size: 0.8rem;">CTO, FinTech MY</p>
+                    </div>
+                </div>
+                <p style="margin: 0; flex-grow: 1; font-size: 0.9rem;">"Friendly Attacker found vulnerabilities in our app that 3 other firms missed. Their ransomware hardening saved us from an attack."</p>
+                <div style="color: gold; margin-top: 1rem;">★★★★★</div>
+            </div>-->
+
+            <!-- Card 3: Statistic -->
+            <div class="carousel-card" style="min-width: 300px; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 2rem; border-left: 4px solid var(--secondary); display: flex; flex-direction: column; height: 300px; box-sizing: border-box;">
+                <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;">3.5M</div>
+                <p style="font-weight: bold; margin: 0; flex-grow: 1;">Average ransomware payment in Malaysia (2023)</p>
+                <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8; margin-bottom: 0;">Source: BNM Cybersecurity Alert</p>
+            </div>
+
+            <!-- Card 4: Testimonial
+            <div class="carousel-card" style="min-width: 300px; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 2rem; border-left: 4px solid #25D366; display: flex; flex-direction: column; height: 300px; box-sizing: border-box;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: #ccc; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.8rem;">Photo</div>
+                    <div>
+                        <h4 style="margin: 0; font-size: 1rem;">Priya Kaur</h4>
+                        <p style="margin: 0; font-size: 0.8rem;">Security Lead, E-Commerce</p>
+                    </div>
+                </div>
+                <p style="margin: 0; flex-grow: 1; font-size: 0.9rem;">"Their security training made our developers finally understand XSS attacks. We've reduced vulnerabilities by 70%."</p>
+                <div style="color: gold; margin-top: 1rem;">★★★★☆</div>
+            </div>-->
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Carousel CSS -->
+<style>
+    .carousel-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 20px;
+    }
+
+    .carousel-card {
+        flex: 0 0 300px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        padding: 2rem;
+        border-left: 4px solid var(--secondary);
+        height: 200px;
+        box-sizing: border-box;
+    }
+</style>
+
+<!-- JavaScript that automatically handles any number of cards -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.carousel-card');
+    const cardWidth = 300; // Match your CSS width
+    const gap = 20; // Match your CSS gap
+
+    // Duplicate cards for seamless loop
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    // Calculate total width for animation
+    const totalCards = cards.length;
+    const totalWidth = (cardWidth + gap) * totalCards;
+
+    // Create dynamic keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-${totalWidth}px); }
+        }
+        .carousel-track {
+            animation: scroll ${totalCards * 3}s linear infinite;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Pause on hover
+    const container = document.querySelector('.carousel-container');
+    container.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+    });
+    container.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+    });
+});
+</script>
+
+
+
+    <!-- Contact CTA
+    <section id="contact" class="section" style="text-align: center; background: rgba(42,42,114,0.5);">
+        <h2 class="section-title">Ready to Test Your Defenses?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Contact us for a free initial consultation</p>
+        <a href="mailto:nightpegasus@duck.com" class="cta-button">Email Us</a>
+    </section>
+ -->
+
+<!-- Footer -->
+    <footer>
+        <p>© 2025 Kinabalu Security™. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">Defending Your Fort</p>
+    </footer>
+</body>
+</html>

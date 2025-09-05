@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinabaluSec™ | Services</title>
+    <style>
+        :root {
+            --primary: #2a2a72;
+            --secondary: #ff6b6b;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: white;
+            line-height: 1.6;
+        }
+        .btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .coming-soon {
+            position: relative;
+            overflow: hidden;
+        }
+        .coming-soon::before {
+            content: "COMING SOON";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 2rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .coming-soon .btn {
+            opacity: 0.6;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .comparison-table th {
+            background-color: rgba(255,107,107,0.2);
+            color: var(--secondary);
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 0.5rem;
+        }
+        footer {
+            background-color: var(--primary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .free-tag {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/service-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .navbar {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .new {
+            position: relative;
+            overflow: hidden;
+        }
+        .new::before {
+            content: "NEW";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 2rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .price-average {
+            background: rgba(255,107,107,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        .price-range {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #ff6b6b;
+        }
+        .price-tag {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0.5rem auto 0;
+        }
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            width: 300px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255,107,107,0.2);
+        }
+        .service-features {
+            margin: 1rem 0;
+            padding-left: 1.2rem;
+        }
+        .service-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        .service-features li::before {
+            content: "→";
+            color: var(--secondary);
+            position: absolute;
+            left: -1.2rem;
+        }
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+</style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+      <span>Kinabalu Security™</span>
+      </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#vacancies">Vacancies</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Security Testing Services</h1>
+        <p>Professional security assessments with transparent pricing</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+
+
+    <!-- Services Grid 📜🕵️🏰🌋🌺🍯🔀™🚧🚷-->
+
+<div class="services-grid">
+    <!-- Free Scan (lead magnet) -->
+    <div class="service-card">
+        <div class="service-icon">
+            <span>🛡️</span>
+        </div>
+        <h3>Web Vulnerability Scan</h3>
+        <p>Free automated scan of your web application for common security vulnerabilities.</p>
+        <div class="free-tag">FREE*</div>
+        <div class="disclaimer">*Basic scan only. Detailed report available for premium upgrade.</div>
+        <a href="#contact" class="btn">Request Scan</a>
+    </div>
+
+    <!-- Network Assessment -->
+    <div class="service-card">
+        <div class="service-icon">
+            <span>🌐</span>
+        </div>
+        <h3>Network Assessment</h3>
+        <p>Comprehensive vulnerability identification and security posture evaluation of your network infrastructure.</p>
+        <div class="price-tag">From RM 5,000</div>
+
+
+    <!-- "More Info" Button (Now Triggers Expand) -->
+    <button class="btn toggle-info-btn">More Info</button>
+
+    <!-- Hidden Expandable Content -->
+    <div class="expandable-content" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+        <h4>Service Details</h4>
+        <ul class="service-features">
+                    <li>External network assessment</li>
+                    <li>Internal network assessment</li>
+                    <li>Firewall configuration review</li>
+                    <li>Security configuration review</li>
+                    <li>Detailed vulnerability report</li>
+                </ul>
+                <a href="#contact" class="btn">I'm interested</a>
+            </div>
+</div>
+
+
+
+<!-- Core Pentesting Services -->
+<!-- Web app pentesting -->
+    <div class="service-card">
+        <div class="service-icon">
+            <span>🔓</span>
+        </div>
+        <h3>Web App Pentesting</h3>
+        <p>OWASP Top 10 coverage + PDPA compliance checks for Malaysian businesses. Identifying vulnerabilities in web applications, such as SQL injection, XSS, and insecure configurations.</p>
+        <div class="price-tag">From RM 5,000</div>
+
+    <!-- "More Info" Button (Now Triggers Expand) -->
+    <button class="btn toggle-info-btn">More Info</button>
+
+    <!-- Hidden Expandable Content -->
+    <div class="expandable-content" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+        <h4>Service Details</h4>
+        <ul class="service-features">
+                    <li>OWASP Top 10 coverage</li>
+                    <li>Authentication testing</li>
+                    <li>Session management testing</li>
+                    <li>Business logic flaw testing</li>
+                </ul>
+        <a href="#contact" class="btn">I'm interested</a>
+    </div>
+</div>
+
+
+<!-- Network Pentesting -->
+    <div class="service-card">
+        <div class="service-icon">
+            <span>🌐</span>
+        </div>
+        <h3>Network Pentesting</h3>
+        <p>Simulated attack exercises to exploit vulnerabilities and test your network's defensive capabilities.</p>
+        <div class="price-tag">From RM 7,000</div>
+
+
+    <!-- "More Info" Button (Now Triggers Expand) -->
+    <button class="btn toggle-info-btn">More Info</button>
+
+    <!-- Hidden Expandable Content -->
+    <div class="expandable-content" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+        <h4>Service Details</h4>
+        <ul class="service-features">
+                    <li>External network penetration testing</li>
+                    <li>Internal network exploitation</li>
+                    <li>Privilege escalation attempts</li>
+                    <li>Lateral movement simulation</li>
+                    <li>Detailed exploitation report</li>
+                </ul>
+                <a href="#contact" class="btn">I'm interested</a>
+            </div>
+</div>
+
+
+    <!-- Ransomware Protection Group -->
+    <div class="service-card">
+        <div class="service-icon">
+            <span>💾</span>
+        </div>
+        <h3>Backup Protection (B.aRA™)</h3>
+        <p>Protect your most sensitive data from exfiltration by making it unusable to attackers even if they breach your network.</p>
+        <div class="price-tag">From RM 30,000</div>
+        <a href="#contact" class="btn">Protect Backups</a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">
+            <span>🔐</span>
+        </div>
+        <h3>Ransomware Hardening (H.aRa™)</h3>
+        <p>Comprehensive protection against ransomware with unique and advanced hardening techniques.</p>
+        <div class="price-tag">From RM 50,000</div>
+        <a href="#contact" class="btn">Harden Systems</a>
+    </div>
+
+    <div class="service-card new">
+        <div class="service-icon">
+            <span>🔀</span>
+        </div>
+        <h3>Project Rafflesia™</h3>
+        <p>A living decoy ecosystem — designed to envelop unwanted visitors in carefully crafted traps, shielding your real systems from harm.</p>
+        <p class="classification">[ Confidential Service | Customized Service ]</p>
+        <p class="limited">*Available only with an active SOC or equivalent security operations capability.</p>
+        <div class="price-tag">From RM 70,000</div>
+        <a href="#contact" class="btn">Plant the Seed</a>
+    </div>
+
+
+    <div class="service-card new">
+        <div class="service-icon">
+            <span>🌀</span>
+        </div>
+        <h3>Project Nepenthes Rajah™</h3>
+        <small class="tagline"><em>Rewinder</em></small>
+        <p>A covert counter-operations initiative designed to silently disrupt adversary attacks from within. Project Nepenthes Rajah embeds capabilities to rewind malicious execution sequences, effectively undoing damage by reversing commands at the system level.</p>
+        <!--<ul class="service-highlights">
+            <li>⚡ Real-time encryption key interception</li>
+            <li>🔍 Forensic analysis of attack patterns</li>
+            <li>🔄 Systematic command rewinding capability</li>
+        </ul>-->
+        <p class="classification">[ Confidential Service | Client Clearance Required ]</p>
+        <div class="price-tag">From RM 100,000 — Engagement Level Sigma</div>
+        <a href="#contact" class="btn">Turn Back</a>
+    </div>
+
+<div class="service-card new">
+    <div class="service-icon">
+        <span>🌉</span>
+    </div>
+    <h3>Project Tamparuli Bridge™</h3>
+    <small class="tagline"><em>Serve is Over</em></small>
+    <p>Operation Waiting Shore is our covert red team service. Inspired by the one-way bridge at Tamparuli, this initiative ensures that adversaries cannot move freely. We quietly take control of the flow, keeping critical assets safe and attackers at bay.</p>
+    <!--<ul class="service-highlights">
+        <li>⚡ Covert counter-operations</li>
+        <li>🌊 Inspired by Tamparuli’s one-way passage</li>
+        <li>🔒 Designed to complement SOC teams</li>
+    </ul>-->
+    <p class="classification">[ Confidential Service | Client Clearance Required ]</p>
+    <p class="limited">*Available only with an active SOC and red team or equivalent security operations capability.</p>
+    <div class="price-tag">From RM 50,000 — Engagement Level Alpha</div>
+    <a href="#contact" class="btn">Enter the Bridge</a>
+</div>
+
+
+
+    <!-- Training Card
+<div class="service-card coming-soon">
+    <div class="service-icon">
+        <span>🎓</span>
+    </div>
+    <h3>Security Training</h3>
+    <p>Custom workshops for developers and staff on secure coding and threat awareness. Topics like firewall rules, natting, and many more.</p>
+    <div class="price-tag">RM 50/pax*</div>
+    <div class="disclaimer">
+        *Max 20 pax/class session. <a href="docs/training-schedule.pdf" style="color:#ff6b6b;">View schedule</a>.
+    </div>-->
+
+    <!-- "More Info" Button (Now Triggers Expand)
+    <button class="btn toggle-info-btn">More Info</button>-->
+
+    <!-- Hidden Expandable Content
+    <div class="expandable-content" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+        <h4>Pricing Details</h4>
+        <ul>
+            <li><strong>Public Class:</strong> RM 50/pax (max 20 participants)</li>
+            <li><strong>Corporate Group (10+):</strong> RM 45/pax</li>
+            <li><strong>Private Session:</strong> RM 3,500/day (custom agenda)</li>
+        </ul>
+
+        <h4>Become a Trainer</h4>
+        <p>We're hiring freelance security trainers! Email your CV to <a href="mailto:trainers@friendlyattacker.my" style="color:#ff6b6b;">trainers@friendlyattacker.my</a> with subject: "Freelance Trainer Application".</p>
+
+        <a href="/training-schedule.pdf" class="btn" style="display: inline-block; margin-top: 0.5rem;">View Full Schedule (PDF)</a>
+    </div>-->
+</div>
+
+<!-- done -->
+
+
+<!-- API Testing
+<div class="service-card coming-soon">
+         <div class="service-icon">⚙️</div>
+         <h3>API Testing</h3>
+         <p>Testing application programming interfaces (APIs) that serve as gateways to backend application systems.</p>
+         <div class="price-tag">From RM 5,000</div>
+         <ul class="service-features">
+             <li>REST API testing</li>
+             <li>GraphQL endpoint testing</li>
+             <li>Authentication bypass testing</li>
+             <li>Data exposure assessment</li>
+         </ul>
+         <a href="#contact" class="btn">I'm interested</a>
+     </div>
+-->
+
+<!-- Mobile Testing
+<div class="service-card coming-soon">
+         <div class="service-icon">📱</div>
+         <h3>Mobile Testing</h3>
+         <p>Assessing mobile applications for security flaws in an age where many companies have mobile applications.</p>
+         <div class="price-tag">From RM 10,000</div>
+         <ul class="service-features">
+             <li>iOS application testing</li>
+             <li>Android application testing</li>
+             <li>Data storage security</li>
+             <li>Communication security testing</li>
+         </ul>
+         <a href="#contact" class="btn">I'm interested</a>
+     </div>
+ -->
+<!-- Custom Testing
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Custom Testing</h3>
+                <p>Tailored security assessments designed to meet your organization's specific needs and requirements.</p>
+                <div class="price-range">Contact for pricing</div>
+                <div class="price-average">Custom solutions</div>
+                <ul class="service-features">
+                    <li>IoT device testing</li>
+                    <li>SCADA/ICS security assessment</li>
+                    <li>Social engineering testing</li>
+                    <li>Physical security assessment</li>
+                </ul>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+        </div>
+-->
+</div>
+</div>
+</section>
+
+
+
+    <!-- Comparison Section -->
+    <section class="section" style="background: rgba(255,107,107,0.05);">
+        <h2 class="section-title">Service Comparison</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Service Type</th>
+                    <th>Price Range</th>
+                    <th>Average Cost</th>
+                    <th>Testing Focus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Network Testing</td>
+                    <td>RM 5,000 - RM 30,000</td>
+                    <td>RM 10,000</td>
+                    <td>Infrastructure vulnerabilities</td>
+                </tr>
+                <tr>
+                    <td>Web App Testing</td>
+                    <td>RM 5,000 - RM 30,000</td>
+                    <td>RM 12,500</td>
+                    <td>Web application vulnerabilities</td>
+                </tr>
+                <tr>
+                    <td>API Testing</td>
+                    <td>RM 5,000 - RM 50,000</td>
+                    <td>RM 15,000</td>
+                    <td>API endpoint security</td>
+                </tr>
+                <tr>
+                    <td>Mobile Testing</td>
+                    <td>RM 12,500 - RM 40,000</td>
+                    <td>RM 25,000</td>
+                    <td>Mobile application security</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="text-align: center; margin-top: 2rem;">
+            <a href="#contact" class="btn">Get a Custom Quote</a>
+        </p>
+    </section>
+
+
+
+
+    <!-- Add this JavaScript before </body> -->
+<script>
+    document.querySelectorAll('.toggle-info-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expandable = btn.nextElementSibling;
+            expandable.style.display = expandable.style.display === 'none' ? 'block' : 'none';
+            btn.textContent = expandable.style.display === 'none' ? 'More Info' : 'Hide Info';
+        });
+    });
+</script>
+
+<!-- Optional CSS Additions -->
+<style>
+    .expandable-content {
+        transition: all 0.3s ease;
+    }
+    .expandable-content h4 {
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+    }
+    .expandable-content ul {
+        padding-left: 1.2rem;
+        margin-bottom: 1rem;
+    }
+</style>
+
+
+<!-- Footer -->
+    <footer>
+        <p>© 2025 Kinabalu Security™. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem;">Defending Your Fort</p>
+    </footer>
+</body>
+</html>
