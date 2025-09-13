@@ -133,6 +133,29 @@
             text-align: center;
             padding: 0 2rem;
         }
+        .open {
+            position: relative;
+            overflow: hidden;
+        }
+        .open::before {
+            content: "OPEN";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 2rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .open .btn {
+            /*opacity: 0.6;
+            pointer-events: none;
+            cursor: not-allowed;*/
+        }
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
@@ -406,22 +429,24 @@
                 <div class="feature-icon">👨‍💻</div>
                 <h3>Penetration Testers</h3>
                 <p>We're hiring ethical hackers with Web App or Network pentesting experience. CREST/OSCP preferred.</p>
-                <a href="#" style="color: var(--secondary);">Apply Now →</a>
+                <a href="#apply" style="color: var(--secondary);">Apply Now →</a>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">👩‍🏫</div>
                 <h3>Security Trainers</h3>
                 <p>Freelance positions available for those who can teach secure coding or threat awareness.</p>
-                <a href="#" style="color: var(--secondary);">Apply Now →</a>
+                <a href="#apply" style="color: var(--secondary);">Apply Now →</a>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">👨‍🔬</div>
                 <h3>Ransomware Researchers</h3>
                 <p>Work on our H.aRa hardening framework. Malware analysis experience required.</p>
-                <a href="#" style="color: var(--secondary);">Apply Now →</a>
+                <a href="#apply" style="color: var(--secondary);">Apply Now →</a>
             </div>
         </div>
     </section> -->
+
+
 
     <!-- Current Openings -->
     <section class="section">
@@ -429,7 +454,7 @@
 
         <div class="vacancies-grid">
             <!-- Ransomware Researcher -->
-            <div class="vacancy-card freelance">
+            <!--<div class="vacancy-card freelance">
                 <div class="vacancy-icon">🔬</div>
                 <h3>Ransomware Researcher</h3>
                 <div class="vacancy-tags">
@@ -443,14 +468,15 @@
                     <li>Reverse engineering skills</li>
                 </ul>
                 <a href="#apply" class="btn">Apply Now</a>
-            </div>
+            </div>-->
 
-            <div class="vacancy-card freelance">
+            <div class="vacancy-card open">
             <div class="vacancy-icon">⚔️</div>
             <h3>Defensive Security Engineer</h3>
             <div class="vacancy-tags">
             <span class="tag">Hybrid</span>
             <span class="tag">Blue Team</span>
+            <span class="tag">Freelance</span>
         </div>
         <p>We're seeking a Defensive Security Engineer to design and implement advanced protective measures, threat detection systems, and incident response capabilities to fortify our security posture.</p>
         <ul class="vacancy-features">
@@ -472,6 +498,7 @@
     <div class="vacancy-tags">
         <span class="tag">Hybrid</span>
         <span class="tag">Red Team</span>
+            <span class="tag">Freelance</span>
     </div>
     <p>We’re seeking an Offensive Security Engineer to design and build
     advanced adversary simulation tools, bait techniques, and controlled
@@ -637,11 +664,11 @@
                 <h3>Competitive Salary</h3>
                 <p>One-of-a-kind industry-competitive compensation</p>
             </div>
-            <div class="benefit-card">
+            <!--<div class="benefit-card">
                 <div class="benefit-icon">📚</div>
                 <h3>Continuous Learning</h3>
                 <p>Paid certifications and hands-on training opportunities</p>
-            </div>
+            </div>-->
             <div class="benefit-card">
                 <div class="benefit-icon">🏠</div>
                 <h3>Flexible Work</h3>
@@ -651,7 +678,6 @@
                 <div class="banner">First in Malaysia</div>
                 <div class="benefit-icon">🏆</div>
                 <h3>Work-Life Balance</h3>
-                <p><li>You decide your Overtime hours</li></p>
                 <p><li>Get paid more, or take more time off</li></p>
                 <p><li>The choice is always yours — not just a slogan</li></p>
             </div>
@@ -694,35 +720,34 @@
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="kinabalusec@gmail.com" class="btn">Apply Now</a>
+            <a href="#apply" class="btn">Apply Now</a>
         </div>
     </section>
 
 -->
 
 
-    
-<!-- Application Section -->
+ <!-- Application Section -->
     <section id="apply" class="section" style="background: rgba(255, 107, 107, 0.05);">
         <h2 class="section-title">Apply for Position</h2>
-        
+
         <div class="form-container">
             <form id="applicationForm">
                 <div class="form-group">
                     <label for="applicantName">Full Name</label>
                     <input type="text" id="applicantName" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="applicantEmail">Email Address</label>
                     <input type="email" id="applicantEmail" name="email" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="applicantPhone">Phone Number</label>
                     <input type="tel" id="applicantPhone" name="phone">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="applicantPosition">Position Applying For</label>
                     <select id="applicantPosition" name="position" required>
@@ -734,47 +759,47 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="applicantMessage">Why are you interested in this position?</label>
                     <textarea id="applicantMessage" name="message"></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="applicantResume">Upload Resume (PDF, DOC, DOCX)</label>
                     <input type="file" id="applicantResume" name="resume" accept=".pdf,.doc,.docx">
                 </div>
-                
+
                 <button type="submit" class="btn">Submit Application</button>
             </form>
-            
+
             <div id="applicationSuccess" class="success-message">
                 Thank you for your application! We'll review your submission and contact you soon.
             </div>
-            
+
             <p class="form-note">
-                Alternatively, you can email your resume directly to 
+                Alternatively, you can email your resume directly to
                 <a href="mailto:kinabalusec@gmail.com" style="color: var(--secondary);">kinabalusec@gmail.com</a>
             </p>
         </div>
     </section>
 
-    <!-- Notification Section 
+    <!-- Notification Section
     <section id="notify" class="section">
         <h2 class="section-title">Get Notified When Available</h2>
-        
+
         <div class="form-container">
             <form id="notificationForm">
                 <div class="form-group">
                     <label for="notifyName">Your Name</label>
                     <input type="text" id="notifyName" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="notifyEmail">Email Address</label>
                     <input type="email" id="notifyEmail" name="email" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="notifyService">Service You're Interested In</label>
                     <select id="notifyService" name="service" required>
@@ -786,33 +811,34 @@
                         <option value="other">Other Service</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="notifyMessage">Additional Notes (optional)</label>
                     <textarea id="notifyMessage" name="message" placeholder="Tell us about your specific requirements or timeline..."></textarea>
                 </div>
-                
+
                 <button type="submit" class="btn">Notify Me</button>
             </form>
-            
+
             <div id="notificationSuccess" class="success-message">
                 Thanks for your interest! We'll notify you as soon as this service becomes available.
             </div>
-            
+
             <p class="form-note">
-                For immediate inquiries, contact us at 
+                For immediate inquiries, contact us at
                 <a href="mailto:kinabalusec@gmail.com" style="color: var(--secondary);">kinabalusec@gmail.com</a>
             </p>
         </div>
     </section>-->
-<script>
+
+    <script>
         // Simple form handling
         document.getElementById('applicationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('applicationSuccess').style.display = 'block';
             this.reset();
         });
-        
+
         document.getElementById('notificationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('notificationSuccess').style.display = 'block';
